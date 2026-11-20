@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/estil.css?v=2">
+  <link rel="stylesheet" href="css/estil.css?v=3">
 </head>
 <body>
 
@@ -46,88 +46,263 @@
 
     <section class="seccio">
       <div class="contenidor">
-        <div class="graella-3">
+        <!-- Cada notícia té un resum (a la targeta) i el text complet (dins de <div class="noticia-completa" hidden>).
+             Quan cliques la targeta, el text complet s'obre en gran. Per afegir-ne una de nova, copia un <article> sencer. -->
+        <div class="graella-3 noticies">
 
-          <article class="targeta" id="kt-fotos">
-            <img class="targeta__imatge" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifReGPxGMSXN21Ri8WCr51BBtRMZh9ynou29gDkE1t4rNM8WxUZqPMhoAOmpgd_PN6tLnr5Er6khYft8WA3H486GsFmDZTrK8q7XnQXIhOuCxSQYGaQgxAiyiZ8MYBylTvlvvAIYAfRxTmbbmDxzxTVd2E7KYsQ4u7P0z_ed7T1_JODYF6VbXuO_iZ65-P/w600/CARTELL%20DIAPOS%2026.jpg" alt="Cartell de les Diapos 26">
+          <!-- ===== KT FOTOS 2026 ===== -->
+          <article class="targeta" id="kt-fotos" data-imatge-gran="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifReGPxGMSXN21Ri8WCr51BBtRMZh9ynou29gDkE1t4rNM8WxUZqPMhoAOmpgd_PN6tLnr5Er6khYft8WA3H486GsFmDZTrK8q7XnQXIhOuCxSQYGaQgxAiyiZ8MYBylTvlvvAIYAfRxTmbbmDxzxTVd2E7KYsQ4u7P0z_ed7T1_JODYF6VbXuO_iZ65-P/s1600/CARTELL%20DIAPOS%2026.jpg">
+            <img class="targeta__imatge" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifReGPxGMSXN21Ri8WCr51BBtRMZh9ynou29gDkE1t4rNM8WxUZqPMhoAOmpgd_PN6tLnr5Er6khYft8WA3H486GsFmDZTrK8q7XnQXIhOuCxSQYGaQgxAiyiZ8MYBylTvlvvAIYAfRxTmbbmDxzxTVd2E7KYsQ4u7P0z_ed7T1_JODYF6VbXuO_iZ65-P/w600/CARTELL%20DIAPOS%2026.jpg" alt="Cartell de les KT Fotos 2026">
             <div class="targeta__cos">
               <div><span class="xip">diapos</span></div>
               <div class="targeta__data">10 d'octubre de 2026</div>
               <h3>KT Fotos 2026</h3>
-              <p>Dissabte 24 d'octubre, a la Sala Municipal d'Arenys de Munt: les fotos de l'estiu en dues sessions, a les 17 h i a les 19 h. Després de la segona hi haurà una sorpresa per al 4t torn. Entrada: 2 €, en efectiu el mateix dia, reservant-la abans amb el formulari.</p>
+              <p>Dissabte 24 d'octubre, a la Sala Municipal d'Arenys de Munt: les fotos de l'estiu en dues sessions, a les 17 h i a les 19 h. Entrada: 2 €, reservant-la abans amb el formulari.</p>
+              <button class="targeta__llegeix" type="button">Llegeix-la sencera →</button>
+            </div>
+            <div class="noticia-completa" hidden>
+              <p class="noticia__entradeta">Preparats per reviure els 10 millors dies de l'any? Arriben les KT FOTOS 2026!</p>
+              <p>Un moment per retrobar-nos amb els amics i els monitors, i recordar tot el que vam gaudir junts de l'1 al 10 d'agost.</p>
+              <ul class="noticia__fitxa">
+                <li><span>📅</span><b>Dissabte 24 d'octubre de 2026</b></li>
+                <li><span>📍</span><b>Sala Municipal d'Arenys de Munt</b></li>
+                <li><span>🕔</span><b>Primer passi: 17 h · Segon passi: 19 h</b></li>
+                <li><span>🎁</span><b>En acabar: sorpresa per al 4t torn</b></li>
+                <li><span>💶</span><b>Preu: 2 €, pagament en efectiu el mateix dia</b></li>
+              </ul>
+              <p><a class="boto boto--principal" href="https://docs.google.com/forms/d/e/1FAIpQLSch5rW4F0MfGKL7iwaDSLSetk1fELSqncaWuNkxYOLBbBYvIg/viewform" target="_blank" rel="noopener">Reserva la teva entrada</a></p>
+              <p><b>La reserva d'entrada ha de ser individual.</b> Podeu reservar més d'una vegada amb el mateix correu electrònic.</p>
+              <p class="noticia__crit">Ganes de veure-us! Us hi esperem!</p>
             </div>
           </article>
 
-          <article class="targeta" id="radio">
+          <!-- ===== RÀDIO ===== -->
+          <article class="targeta" id="radio" data-color="var(--blau)" data-emoji="📻">
             <div class="targeta__imatge targeta__imatge--color" style="background: var(--blau);">📻</div>
             <div class="targeta__cos">
               <div><span class="xip">ràdio</span></div>
               <div class="targeta__data">8 d'agost de 2026</div>
               <h3>Comunicacions amb la ràdio</h3>
-              <p>Del 3 al 9 d'agost, cada torn ha connectat amb Ràdio Arenys de Munt. Els programes es poden tornar a escoltar en podcast a la web de la ràdio.</p>
-              <a href="https://www.radioarenysmunt.cat" target="_blank" rel="noopener" class="targeta__enllac">Ràdio Arenys de Munt →</a>
+              <p>Del 3 al 9 d'agost, cada torn ha connectat amb Ràdio Arenys de Munt. Aquí tens tots els programes per tornar-los a escoltar.</p>
+              <button class="targeta__llegeix" type="button">Escolta els programes →</button>
+            </div>
+            <div class="noticia-completa" hidden>
+              <p>Cada dia de colònies, els torns han connectat amb <a href="https://www.radioarenysmunt.cat" target="_blank" rel="noopener">Ràdio Arenys de Munt</a>. Aquí podeu tornar a escoltar totes les connexions:</p>
+              <div class="noticia__radio">
+                <div><h4>Diumenge 9 d'agost</h4>
+                  <a href="https://drive.google.com/file/d/1ilrLiSTnFE4iMdzqqqbJhzWDAlyOX9AF/view?usp=drive_link" target="_blank" rel="noopener">1r torn <small>(repàs de totes les colònies)</small></a>
+                  <a href="https://drive.google.com/file/d/1OTtneKW09GBphmeT9My23H-LOZwlUD5n/view?usp=drive_link" target="_blank" rel="noopener">3r torn</a>
+                  <a href="https://drive.google.com/file/d/1tcPi93p1gGG4_P6irvOxRt1HmKKnDboy/view?usp=drive_link" target="_blank" rel="noopener">4t torn</a></div>
+                <div><h4>Divendres 7 d'agost</h4>
+                  <a href="https://drive.google.com/file/d/1GC2mj_dok_4zJ0zHehFpsbh9iCgXpeQg/view?usp=drive_link" target="_blank" rel="noopener">1r torn</a>
+                  <a href="https://drive.google.com/file/d/11hPYqz26olb_YYl11rr0VV79SOjJ6asN/view?usp=sharing" target="_blank" rel="noopener">2n torn</a>
+                  <a href="https://drive.google.com/file/d/1p06PyPDYl0_hsp5UuvS5TaIGsm02o4Pa/view?usp=drive_link" target="_blank" rel="noopener">3r torn</a>
+                  <a href="https://drive.google.com/file/d/18gYrODekbNngo1QxcEvQChRth90_XqXh/view?usp=drive_link" target="_blank" rel="noopener">4t torn</a></div>
+                <div><h4>Dijous 6 d'agost</h4>
+                  <a href="https://drive.google.com/file/d/1BPKvH1h12J9Q3Uk8QEkevraFGPJ2IFHq/view?usp=drive_link" target="_blank" rel="noopener">1r torn</a>
+                  <a href="https://drive.google.com/file/d/1AgKKTSNvRw-b64ZonR2okcomhW30uu07/view?usp=drive_link" target="_blank" rel="noopener">3r torn</a>
+                  <a href="https://drive.google.com/file/d/1Io8qio4WNwmOmyTDOsLg5rSNOS0vh_ju/view?usp=drive_link" target="_blank" rel="noopener">4t torn</a></div>
+                <div><h4>Dimecres 5 d'agost</h4>
+                  <a href="https://drive.google.com/file/d/1VP3W00PHJ_yLfx7Ecz4SM5Ly_Z3ACSum/view?usp=drive_link" target="_blank" rel="noopener">1r torn</a>
+                  <a href="https://drive.google.com/file/d/11GucxnVD8fXavFPGFiP3bESFCCk4U2Os/view?usp=drive_link" target="_blank" rel="noopener">2n torn</a>
+                  <a href="https://drive.google.com/file/d/1UyZzXcAGSd0Xmh8aTWLw7cV2RzIgLRtQ/view?usp=drive_link" target="_blank" rel="noopener">3r torn</a>
+                  <a href="https://drive.google.com/file/d/1_rY5FxAmg8XYA4Cyy2n5FDdHhKBRtvii/view?usp=drive_link" target="_blank" rel="noopener">4t torn</a></div>
+                <div><h4>Dimarts 4 d'agost</h4>
+                  <a href="https://drive.google.com/file/d/1vA7SzyIRg-MXevRby-tk-AnaZjPgGz5z/view?usp=drive_link" target="_blank" rel="noopener">1r torn</a>
+                  <a href="https://drive.google.com/file/d/1us8SirrMJ5CTUskih9Gl5UGKCUzzdgC1/view?usp=drive_link" target="_blank" rel="noopener">2n torn</a>
+                  <a href="https://drive.google.com/file/d/1hRwCisJaBQEXqPEXXF_Q4gSCJr6t1_UE/view?usp=drive_link" target="_blank" rel="noopener">3r torn</a>
+                  <a href="https://drive.google.com/file/d/1ZshabOzbBH37l5TfQKZrQEp70BcpldMb/view?usp=drive_link" target="_blank" rel="noopener">4t torn</a></div>
+                <div><h4>Dilluns 3 d'agost</h4>
+                  <a href="https://drive.google.com/file/d/1eFdg7vqqK4JZGa6rDGfkCKtXc9y_-X52/view?usp=drive_link" target="_blank" rel="noopener">2n torn</a>
+                  <a href="https://drive.google.com/file/d/1-Q3J8Grj0am_--q5iiwKLobsL9IW9DJ_/view?usp=drive_link" target="_blank" rel="noopener">3r torn</a>
+                  <a href="https://drive.google.com/file/d/1_Zs90Phsek6ugUZP6hG9kQaK_WjwwliF/view?usp=drive_link" target="_blank" rel="noopener">4t torn</a></div>
+              </div>
             </div>
           </article>
 
-          <article class="targeta" id="sortida">
+          <!-- ===== SORTIDA 1 D'AGOST ===== -->
+          <article class="targeta" id="sortida" data-imatge-gran="https://blogger.googleusercontent.com/img/a/AVvXsEjTcaL3o3LVzs16CtV3nWV8OAJBT9ljKCkX7NYsfe8Q4tZTnUd_4jx8bvhgmrxILj3mxB3ZobTbR_xquqLj2BtB6G7NPq0LO418Lj8iDEnFkc4BQBkRhYCaINOpwwuokYXtx_3JAMzRul1aFlTWEQW9j3YBpMlTkCYqry1OYLXn8VeSRc0JsSmS2MfbzhAU=w1600">
             <img class="targeta__imatge" src="https://blogger.googleusercontent.com/img/a/AVvXsEjTcaL3o3LVzs16CtV3nWV8OAJBT9ljKCkX7NYsfe8Q4tZTnUd_4jx8bvhgmrxILj3mxB3ZobTbR_xquqLj2BtB6G7NPq0LO418Lj8iDEnFkc4BQBkRhYCaINOpwwuokYXtx_3JAMzRul1aFlTWEQW9j3YBpMlTkCYqry1OYLXn8VeSRc0JsSmS2MfbzhAU=w600" alt="Sortida de les KT 2026">
             <div class="targeta__cos">
               <div><span class="xip">sortida</span></div>
               <div class="targeta__data">1 d'agost de 2026</div>
               <h3>1 d'agost, unes noves KT que engeguen!</h3>
               <p>Han començat les colònies 2026: aquest any han sortit vuit autocars, i el 2n torn ha fet la primera etapa a peu.</p>
+              <button class="targeta__llegeix" type="button">Llegeix-la sencera →</button>
+            </div>
+            <div class="noticia-completa" hidden>
+              <p class="noticia__entradeta">Un altre cop arriba l'1 d'agost i comencen els 10 dies més esperats de tot l'any. Esperats per nens, nenes, joves, monitors i monitores… i també mares i pares.</p>
+              <p>Altra vegada han arrencat els autocars. Aquest any només 8, perquè els valents del 2n torn començaven l'aventura caminant.</p>
+              <p>I aquest migdia cada torn ja era al seu lloc, sense incidències i a punt per fer brollar la màgia de les KT! Endavant amb les KT 2026! Visca les KT!</p>
+              <figure class="noticia__foto noticia__foto--vertical">
+                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiOxD6n5hS6pFUnAA_TYbFOUG0EFb5EqQKoYk5ZI8G_ov4xulKBetSCPbm_elPZTv_ZHPaOPJ-206-9MjsCUk2zfDZutUapQBFYCrduYZdz1prgUWoyURhtz_-9Cs4zalu9JsjYsCo35cr1MKS_d_s8NQHAsSc5aNx0jB6SgXh-tFjiC-lBCKdhy37R_nJM=w900" alt="Inici de les KT 2026" loading="lazy">
+              </figure>
             </div>
           </article>
 
-          <article class="targeta">
+          <!-- ===== CANVI DEL LLOC DE SORTIDA ===== -->
+          <article class="targeta" id="canvi-sortida" data-imatge-gran="https://blogger.googleusercontent.com/img/a/AVvXsEjEoGoKkyiAvUySD2Z9w1jsjd1Lao0i9Rs3mOTGV0hOSm3jNkA8yfNey0HJOg1KiC_eO8q47Mktss5DOYbdg0Ykn6j7Buw9eJBEMaiMD-N35AO9hatVfymo3qzDSssd1q1bGhfLXBuYduaPiDCQ9k4bLyRwI7bBri8gkOWocUgy9YFI2dhOu_GDxv2uXxlj=w1200" data-imatge-sencera>
             <img class="targeta__imatge" src="https://blogger.googleusercontent.com/img/a/AVvXsEjEoGoKkyiAvUySD2Z9w1jsjd1Lao0i9Rs3mOTGV0hOSm3jNkA8yfNey0HJOg1KiC_eO8q47Mktss5DOYbdg0Ykn6j7Buw9eJBEMaiMD-N35AO9hatVfymo3qzDSssd1q1bGhfLXBuYduaPiDCQ9k4bLyRwI7bBri8gkOWocUgy9YFI2dhOu_GDxv2uXxlj=w600" alt="Mapa del nou lloc de sortida">
             <div class="targeta__cos">
               <div><span class="xip">sortida</span></div>
               <div class="targeta__data">24 de juliol de 2026</div>
               <h3>Canvi del lloc de sortida!</h3>
               <p>Per obres al carrer Torrent d'en Puig, la sortida es va fer des del C/ de Cal Moro, dos carrers més enllà del lloc habitual.</p>
+              <button class="targeta__llegeix" type="button">Llegeix-la sencera →</button>
+            </div>
+            <div class="noticia-completa" hidden>
+              <p class="noticia__crit">📢 Important!</p>
+              <p>A causa de les obres al C/ Torrent d'en Puig, aquest any excepcionalment sortirem des del <b>C/ de Cal Moro</b> (dos carrers més enllà).</p>
+              <p><a class="boto boto--principal" href="https://maps.app.goo.gl/V6Q57b9DP66Gy5HF9" target="_blank" rel="noopener">Obre la ubicació al mapa</a></p>
             </div>
           </article>
 
-          <article class="targeta">
+          <!-- ===== DOSSIER ===== -->
+          <article class="targeta" id="dossier" data-color="var(--mari)" data-emoji="📘">
             <div class="targeta__imatge targeta__imatge--color" style="background: var(--mari);">📘</div>
             <div class="targeta__cos">
               <div><span class="xip">dossier</span></div>
               <div class="targeta__data">20 de juliol de 2026</div>
               <h3>El dossier de les KT-26</h3>
               <p>Ja es pot consultar el dossier d'aquest any: sortida, arribada, horaris, activitats, menús i què cal portar.</p>
-              <a href="https://drive.google.com/file/d/1tnBUASf_qvOFFQwCIDWOkHBx9G1AHmBi/view?usp=drive_link" target="_blank" rel="noopener" class="targeta__enllac">Obre el dossier →</a>
+              <button class="targeta__llegeix" type="button">Llegeix-la sencera →</button>
+            </div>
+            <div class="noticia-completa" hidden>
+              <p class="noticia__entradeta">Preparats per redescobrir Arenys de Munt?</p>
+              <p>Aquí trobareu la guia per conèixer el nostre poble mentre siguem fora del nostre poble: el <a href="https://drive.google.com/file/d/1tnBUASf_qvOFFQwCIDWOkHBx9G1AHmBi/view?usp=drive_link" target="_blank" rel="noopener">Dossier de les Catecolònies 2026</a>, amb tot allò imprescindible per venir de colònies.</p>
+              <p>Entre d'altres coses, hi trobareu la informació sobre la sortida i l'arribada, l'horari general, les activitats i els menús, i <b>tot allò que no us heu d'oblidar a la motxilla!</b></p>
+              <p><a class="boto boto--principal" href="https://drive.google.com/file/d/1tnBUASf_qvOFFQwCIDWOkHBx9G1AHmBi/view?usp=drive_link" target="_blank" rel="noopener">Obre el dossier</a></p>
+              <p>Per a qualsevol dubte, podeu contactar-nos al correu <a href="mailto:catecolonies@gmail.com">catecolonies@gmail.com</a>.</p>
+              <p class="noticia__crit">D'aquí a 10 setmanes ens veiem a l'autocar! 🚌</p>
             </div>
           </article>
 
-          <article class="targeta">
+          <!-- ===== LLISTA D'ESPERA ===== -->
+          <article class="targeta" id="llista-espera" data-imatge-gran="https://blogger.googleusercontent.com/img/a/AVvXsEh7JNfI7xYJbAkId4INeqcrImPSQ8HO3VLsr1Yl8UWVOpuFikdZP3fGRWySKu1Jvdtl6eFFuue5JMosjDyoL9Y5xuaGEIRHHbhIAFXcF-v0NEmsltJeHoss8cyVgj6Do2D0cLS8nAX-YLcdmVwW9cH3bh6_MZIh2IMXz3UrmGyDPIdVcHH-8uL59pPqrwGe=w1200" data-imatge-sencera>
             <img class="targeta__imatge" src="https://blogger.googleusercontent.com/img/a/AVvXsEh7JNfI7xYJbAkId4INeqcrImPSQ8HO3VLsr1Yl8UWVOpuFikdZP3fGRWySKu1Jvdtl6eFFuue5JMosjDyoL9Y5xuaGEIRHHbhIAFXcF-v0NEmsltJeHoss8cyVgj6Do2D0cLS8nAX-YLcdmVwW9cH3bh6_MZIh2IMXz3UrmGyDPIdVcHH-8uL59pPqrwGe=w600" alt="Llista d'espera">
             <div class="targeta__cos">
               <div><span class="xip">preinscripcions</span></div>
               <div class="targeta__data">19 de juny de 2026</div>
               <h3>Obrim llista d'espera!</h3>
-              <p>Llista d'espera per al 1r i el 2n torn fins al 24 de juny a les 23.59 h. Les places s'assignen segons els criteris de puntuació de l'entitat. El 3r i el 4t torn són plens.</p>
+              <p>Llista d'espera per al 1r i el 2n torn fins al 24 de juny a les 23.59 h. El 3r i el 4t torn són plens.</p>
+              <button class="targeta__llegeix" type="button">Llegeix-la sencera →</button>
+            </div>
+            <div class="noticia-completa" hidden>
+              <p class="noticia__entradeta">Inscripcions obertes fins al 24 de juny a les 23.59 h.</p>
+              <p>Obrim llista d'espera per al 1r i el 2n torn:</p>
+              <ul>
+                <li><b>1r torn</b> (4t i 5è de Primària)</li>
+                <li><b>2n torn</b> (6è de Primària i 1r d'ESO)</li>
+              </ul>
+              <p>Les places s'assignaran segons els barems i la puntuació establerta per l'entitat.</p>
+              <p class="noticia__avis"><b>Alerta:</b> el 3r i el 4t torn ja són plens!</p>
+              <p><a class="boto boto--principal" href="https://docs.google.com/forms/d/1Z-TA2Sjp_oCalESp7-cklyp_Bo_0EELAgz0-P823z4g/viewform" target="_blank" rel="noopener">Fes la preinscripció</a></p>
             </div>
           </article>
 
-          <article class="targeta">
+          <!-- ===== INSCRIPCIONS 2026 ===== -->
+          <article class="targeta" id="inscripcions-2026" data-imatge-gran="https://blogger.googleusercontent.com/img/a/AVvXsEgsOmJWb1uGZullb760x3FHe8mgBqVJEDYag6UN-encf8pZTOf3EGAkjhPBZEFNn771vseQvzJcDiZx3_5aWxRgZjwGFYzy6k5JzGzApRiA2CU3sb0_qKC3q2bpkHA3C66R7-xa9FIWo2IJuYprojxQzKL5LPtXIkLuXNh5AS8mZd9LqrAOettyIzDSJTBl=w1200" data-imatge-sencera>
             <img class="targeta__imatge" src="https://blogger.googleusercontent.com/img/a/AVvXsEgsOmJWb1uGZullb760x3FHe8mgBqVJEDYag6UN-encf8pZTOf3EGAkjhPBZEFNn771vseQvzJcDiZx3_5aWxRgZjwGFYzy6k5JzGzApRiA2CU3sb0_qKC3q2bpkHA3C66R7-xa9FIWo2IJuYprojxQzKL5LPtXIkLuXNh5AS8mZd9LqrAOettyIzDSJTBl=w600" alt="Inscripcions 2026">
             <div class="targeta__cos">
               <div><span class="xip">inscripcions</span></div>
               <div class="targeta__data">24 de maig de 2026</div>
               <h3>Inscripcions Catecolònies 2026</h3>
-              <p>Recollida d'inscripcions al Centre Moral el 29 de maig (18–20 h) i el 6 de juny (10–12 h). Reunió de famílies el 29 de maig a les 20 h, i reunió de la ruta del 4t torn el 21 de juny a les 18 h.</p>
-              <a href="inscripcions.html" class="targeta__enllac">Com funcionen les inscripcions →</a>
+              <p>Recollida d'inscripcions al Centre Moral el 29 de maig (18–20 h) i el 6 de juny (10–12 h). Reunió de famílies el 29 de maig a les 20 h.</p>
+              <button class="targeta__llegeix" type="button">Llegeix-la sencera →</button>
+            </div>
+            <div class="noticia-completa" hidden>
+              <p>Benvolgudes famílies,</p>
+              <p>Ens plau informar-vos de les colònies d'estiu 2026. A continuació us deixem tota la informació necessària per a les inscripcions.</p>
+
+              <h4>Recollida d'inscripcions</h4>
+              <ul>
+                <li><b>Divendres 29 de maig</b>, de <b>18 h a 20 h</b> (Centre Moral)</li>
+                <li><b>Dissabte 6 de juny</b>, de <b>10 h a 12 h</b> (Centre Moral)</li>
+              </ul>
+              <p><i>Imprescindible haver fet la preinscripció prèviament.</i></p>
+
+              <h4>Reunió informativa</h4>
+              <p><b>Divendres 29 de maig, a les 20 h:</b> reunió informativa per a les famílies (Centre Moral).</p>
+
+              <h4>Documentació a presentar</h4>
+              <p>Per formalitzar la inscripció del participant o dels participants cal portar la documentació següent:</p>
+              <ul>
+                <li>La <a href="https://docs.google.com/document/d/19d5G04wiaagC9Ot5QAqKRNqQz_BzOxj5FK9eQtoxvEY/edit?usp=drive_link" target="_blank" rel="noopener">fitxa d'inscripció</a>.</li>
+                <li>El comprovant de pagament per transferència (individual per participant, no per famílies). <small>En el concepte cal indicar el nom i cognoms del participant i el torn.</small></li>
+                <li>Una fotocòpia del DNI del nen o nena*.</li>
+                <li>Una fotocòpia de la targeta de la Seguretat Social.</li>
+                <li>Una fotocòpia de les vacunes** (on es vegi bé el nom del participant).</li>
+              </ul>
+              <p><small>* Si l'infant no té DNI, caldrà entregar una fotocòpia del llibre de família.<br>
+              ** Si no en té, caldrà omplir i signar la <a href="https://drive.google.com/file/d/1im3BMfiDbFJj22TzHj4aicQZ9yM2p2UB/view?usp=drive_link" target="_blank" rel="noopener">declaració responsable de no vacunació</a>.</small></p>
+
+              <h4>Preus i pagament</h4>
+              <p>L'abonament de la inscripció s'ha de fer per transferència al compte següent:</p>
+              <p class="noticia__compte">ES15 2100 6247 58 1300237350</p>
+              <p><small>En el concepte cal indicar el nom i cognoms del participant i el torn que li correspon.</small></p>
+              <p>El preu total de les colònies és de <b>390 €</b>. En cas de 2 germans participants o més, <b>360 €</b> cadascun.</p>
+              <p class="noticia__avis"><b>Alerta:</b> el preu inclou els 50 € de la preinscripció; és a dir, <b>cal fer l'ingrés de 340 €, o de 310 € en cas de germans</b>.</p>
+
+              <h4>Normativa</h4>
+              <p>Adjuntem el document amb la <a href="https://drive.google.com/file/d/1AYddt8sL-9jREVzJqYOHR0axPvFJTAch/view?usp=drive_link" target="_blank" rel="noopener">normativa interna</a> del C.E. Catecolònies Sant Martí. És important que tothom n'estigui al corrent, i la seva acceptació és obligatòria: cal marcar-la amb una creu a l'opció que trobareu a la fitxa d'inscripció que s'entrega el dia de les inscripcions.</p>
+
+              <h4>4t torn (4t d'ESO – 1r de Batxillerat)</h4>
+              <p>El 4t torn farà una <b>reunió diferent i específica el dia 21 de juny a les 18 h</b> per parlar de la ruta. Enviarem correus a les famílies per acabar de concretar la informació.</p>
+              <p><a href="inscripcions.html">Com funcionen les inscripcions →</a></p>
             </div>
           </article>
 
-          <article class="targeta">
+          <!-- ===== MINI-KT ===== -->
+          <article class="targeta" id="minikt" data-imatge-gran="https://blogger.googleusercontent.com/img/a/AVvXsEgf_Rf5U4APDxZ87ZAeL6hLx-LfVmZksV2OM9LW0fGf3_moq9x_nMOO1cKwoBqR2Ug1k3KHAOZtQCye0TMrziiOOZ45GjJnt2bYtHPzQsqWSCTQRFHIHwE5mJi_JfNarZ4K2KWYlS3z8p-3p2UdIlR7ha7WByUu8qn971jNFGnQld6AfVH31gYnpHHLPQn0=w1200" data-imatge-sencera>
             <img class="targeta__imatge" src="https://blogger.googleusercontent.com/img/a/AVvXsEgf_Rf5U4APDxZ87ZAeL6hLx-LfVmZksV2OM9LW0fGf3_moq9x_nMOO1cKwoBqR2Ug1k3KHAOZtQCye0TMrziiOOZ45GjJnt2bYtHPzQsqWSCTQRFHIHwE5mJi_JfNarZ4K2KWYlS3z8p-3p2UdIlR7ha7WByUu8qn971jNFGnQld6AfVH31gYnpHHLPQn0=w600" alt="Cartell de la Mini-KT">
             <div class="targeta__cos">
               <div><span class="xip">minikt</span></div>
               <div class="targeta__data">5 de març de 2026</div>
               <h3>Mini-KT 2n torn: inscripcions</h3>
-              <p>Sortida del 30 al 31 de març amb ruta, acampada i jocs (20 €). Inscripcions al Casalet el 7 de març (16–18 h) i el 8 de març (10–13 h). Trobada a la plaça de l'Església a les 9 h. Cal portar sac, esterilla, coberts, plat de campanya i cantimplora.</p>
+              <p>Sortida del 30 al 31 de març amb ruta, acampada i jocs (20 €). Inscripcions al Casalet el 7 i el 8 de març.</p>
+              <button class="targeta__llegeix" type="button">Llegeix-la sencera →</button>
+            </div>
+            <div class="noticia-completa" hidden>
+              <p class="noticia__entradeta">⛺ Mini-KT · 2n torn · 30 i 31 de març</p>
+              <p>Vine a viure una experiència increïble amb:</p>
+              <ul>
+                <li>🥾 Ruta</li>
+                <li>🏕️ Acampada</li>
+                <li>🎲 Jocs</li>
+                <li>✨ I molts moments inoblidables!</li>
+              </ul>
+              <ul class="noticia__fitxa">
+                <li><span>💶</span><b>Cost: 20 €</b> — pagament per transferència (ES15 2100 6247 58 1300 2373 50)</li>
+                <li><span>📍</span><b>Ens trobem el 30 de març a les 9.00 h</b> a la plaça de l'Església d'Arenys de Munt</li>
+                <li><span>📝</span><b>Inscripcions al Casalet:</b> 7 de març (16.00–18.00 h) i 8 de març (10.00–13.00 h)</li>
+              </ul>
+
+              <h4>Cal portar a la inscripció</h4>
+              <ul>
+                <li>La fitxa d'inscripció (<a href="https://drive.google.com/file/d/1YxhFob8rLp6awmiIFxi_KpxKV6_ukwyG/view?usp=sharing" target="_blank" rel="noopener">enllaç</a>)</li>
+                <li>El comprovant de pagament (amb el nom de l'infant)</li>
+                <li>Una fotocòpia del DNI</li>
+                <li>La targeta sanitària i les vacunes</li>
+              </ul>
+
+              <h4>Què s'ha de portar a la Mini-KT?</h4>
+              <ul class="noticia__llista-2">
+                <li>Esmorzar i dinar del primer dia</li>
+                <li>Calçat còmode per caminar</li>
+                <li>Muda de recanvi</li>
+                <li>Roba tèrmica i d'abric (muda llarga)</li>
+                <li>Cantimplora (plena!)</li>
+                <li>Màrfega</li>
+                <li>Sac de dormir</li>
+                <li>Capelina</li>
+                <li>Llanterna</li>
+                <li>Repel·lent de mosquits</li>
+                <li>Protecció solar</li>
+                <li>Necesser i productes d'higiene personal</li>
+                <li>Coberts i carmanyola</li>
+              </ul>
+              <p class="noticia__avis">Si l'infant pren algun medicament, caldrà portar-lo el mateix dia de la sortida (30 de març), juntament amb l'autorització del medicament.</p>
+              <p class="noticia__crit">⚡ No t'ho perdis!</p>
             </div>
           </article>
 
@@ -135,6 +310,19 @@
       </div>
     </section>
   </main>
+
+  <!-- ===== LECTOR DE NOTÍCIES: aquí s'obre la notícia en gran ===== -->
+  <dialog class="lector" aria-labelledby="lector-titol">
+    <button class="lector__tanca" type="button" aria-label="Tanca la notícia">✕</button>
+    <div class="lector__portada"></div>
+    <div class="lector__cos">
+      <div class="lector__meta"></div>
+      <h2 id="lector-titol"></h2>
+      <div class="lector__text"></div>
+      <a class="lector__blog" href="https://catecolonies.blogspot.com/" target="_blank" rel="noopener">Notícies anteriors al blog antic →</a>
+    </div>
+  </dialog>
+
 
 
   <!-- ===== PEU DE PÀGINA (igual a totes les pàgines) ===== -->
@@ -185,6 +373,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>
