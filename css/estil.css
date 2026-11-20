@@ -1269,3 +1269,158 @@ a.suport__logo:hover { transform: translateY(-2px); }
 /* Bloc "Amb el suport de" centrat */
 .avis--suport { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 18px; }
 .avis--suport .avis__logos { justify-content: center; }
+
+/* =========================================================
+   Notícies: targeta clicable + lector en gran
+   ========================================================= */
+.noticies .targeta { cursor: pointer; }
+.noticies .targeta:focus-within { outline: 3px solid var(--groc); outline-offset: 3px; }
+.targeta__llegeix {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: 700;
+  color: var(--accent);
+  cursor: pointer;
+}
+.targeta__llegeix:hover { text-decoration: underline; }
+
+/* Finestra */
+.lector {
+  width: min(860px, calc(100% - 24px));
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radi);
+  background: var(--blanc);
+  color: var(--text);
+  box-shadow: 0 30px 80px rgba(11, 39, 64, 0.45);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.lector::backdrop { background: rgba(11, 39, 64, 0.72); backdrop-filter: blur(4px); }
+.lector[open] { animation: lector-entra 0.25s ease; }
+@keyframes lector-entra { from { opacity: 0; transform: translateY(24px) scale(0.98); } }
+body.lector-obert { overflow: hidden; }
+
+.lector__tanca {
+  position: sticky;
+  top: 14px;
+  float: right;
+  margin: 14px 14px -58px 0;
+  z-index: 2;
+  width: 44px; height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--mari);
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+.lector__tanca:hover { background: var(--groc); }
+
+/* Imatge gran de capçalera */
+.lector__portada { background: var(--mari-fosc); }
+.lector__portada img {
+  display: block;
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;     /* es veu sencera: cartells i mapes no es retallen */
+}
+.lector__portada--color {
+  height: 220px;
+  display: grid; place-items: center;
+  font-size: 5rem;
+}
+
+.lector__cos { padding: 34px clamp(22px, 6vw, 64px) 44px; }
+.lector__meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+.lector__meta .xip { margin: 0; }
+.lector__meta .targeta__data { margin: 0; }
+.lector h2 {
+  font-family: var(--font-titols);
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  line-height: 1.1;
+  color: var(--mari);
+  margin: 0 0 22px;
+}
+.lector__text { font-size: 1.05rem; line-height: 1.7; }
+.lector__text h4 {
+  font-family: var(--font-titols);
+  color: var(--mari);
+  font-size: 1.2rem;
+  margin: 30px 0 8px;
+}
+.lector__text ul { padding-left: 1.2em; }
+.lector__text li { margin-bottom: 4px; }
+.lector__text .boto { margin-top: 4px; }
+.lector__blog {
+  display: inline-block;
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 2px solid var(--crema-2);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text-suau);
+}
+
+.noticia__entradeta { font-size: 1.22rem; font-weight: 700; color: var(--mari); }
+.noticia__crit { font-family: var(--font-titols); font-size: 1.3rem; font-weight: 800; color: var(--vermell, var(--mari)); }
+.noticia__avis {
+  background: #fff6dc;
+  border-left: 5px solid var(--groc);
+  padding: 12px 16px;
+  border-radius: var(--radi-petit);
+}
+.noticia__compte {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: var(--crema-2);
+  padding: 10px 14px;
+  border-radius: var(--radi-petit);
+  display: inline-block;
+}
+.noticia__fitxa {
+  list-style: none;
+  padding: 18px 20px !important;
+  background: var(--crema);
+  border-radius: var(--radi-petit);
+}
+.noticia__fitxa li { display: flex; gap: 12px; align-items: baseline; margin-bottom: 8px; }
+.noticia__fitxa li:last-child { margin-bottom: 0; }
+.noticia__llista-2 { columns: 2; column-gap: 32px; }
+.noticia__foto { margin: 24px 0 0; }
+.noticia__foto img { display: block; width: 100%; border-radius: var(--radi-petit); }
+.noticia__foto--vertical img { max-width: 360px; margin: 0 auto; }
+
+/* Ràdio: dies amb els enllaços de cada torn */
+.noticia__radio { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 18px; }
+.noticia__radio > div { background: var(--crema); border-radius: var(--radi-petit); padding: 16px 18px; }
+.noticia__radio h4 { margin: 0 0 10px; font-size: 1rem; }
+.noticia__radio a {
+  display: inline-block;
+  margin: 0 6px 6px 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--blanc);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--accent);
+  box-shadow: 0 1px 3px rgba(18, 57, 90, 0.12);
+}
+.noticia__radio a::before { content: "▶ "; font-size: 0.75em; }
+.noticia__radio a:hover { background: var(--accent); color: var(--blanc); }
+
+@media (max-width: 600px) {
+  .lector { width: 100%; max-height: 100dvh; height: 100dvh; max-width: 100%; border-radius: 0; margin: 0; }
+  .lector__portada img { max-height: 55vh; }
+  .noticia__radio, .noticia__llista-2 { grid-template-columns: 1fr; columns: 1; }
+}
