@@ -1,0 +1,1260 @@
+/* =========================================================
+   Catecolònies Sant Martí · Arenys de Munt
+   Full d'estils principal
+   ========================================================= */
+
+/* ---------- 1. Variables (canvia aquí els colors de tota la web) ---------- */
+:root {
+  --mari: #12395a;        /* blau marí: color principal */
+  --mari-fosc: #0b2740;
+  --groc: #ffc83d;        /* groc sol */
+  --accent: #0091d0;      /* blau cel: botons i accents */
+  --taronja: #ff8c42;
+  --blau: #00aeea;        /* blau cel clar */
+  --lila: #7b6ce0;
+  --crema: #f7fafc;       /* fons general */
+  --crema-2: #e5eef5;
+  --text: #1d2420;
+  --text-suau: #55605a;
+  --blanc: #ffffff;
+
+  --radi: 22px;
+  --radi-petit: 12px;
+  --ombra: 0 10px 30px rgba(18, 57, 90, 0.12);
+  --ample: 1160px;
+
+  --font-titols: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-text: "DM Sans", system-ui, sans-serif;
+}
+
+/* ---------- 2. Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--crema);
+}
+img { max-width: 100%; display: block; }
+a { color: var(--mari); }
+h1, h2, h3, h4 {
+  font-family: var(--font-titols);
+  line-height: 1.1;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.02em;
+}
+h1 { font-size: clamp(2.4rem, 6vw, 4.4rem); font-weight: 800; }
+h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; }
+h3 { font-size: 1.35rem; font-weight: 700; }
+p { margin: 0 0 1em; }
+
+.contenidor { width: min(100% - 40px, var(--ample)); margin-inline: auto; }
+.seccio { padding: 90px 0; }
+.seccio--blanca { background: var(--blanc); }
+.seccio--fosca { background: var(--mari); color: var(--crema); }
+.seccio--fosca h2, .seccio--fosca h3 { color: var(--blanc); }
+
+.etiqueta {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.intro { font-size: 1.15rem; color: var(--text-suau); max-width: 640px; }
+.seccio--fosca .intro { color: #d3e3ef; }
+.capcalera-seccio { margin-bottom: 48px; }
+.capcalera-seccio--centre { text-align: center; }
+.capcalera-seccio--centre .intro { margin-inline: auto; }
+
+/* ---------- 3. Botons ---------- */
+.boto {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: transform 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+}
+.boto:hover { transform: translateY(-2px); }
+.boto--principal { background: var(--accent); color: var(--blanc); }
+.boto--principal:hover { background: #0077ad; }
+.boto--contorn { border-color: var(--mari); color: var(--mari); background: transparent; }
+.boto--contorn:hover { background: var(--mari); color: var(--blanc); }
+.boto--groc { background: var(--groc); color: var(--mari-fosc); }
+
+/* ---------- 4. Capçalera / menú ---------- */
+.capcalera {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(247, 250, 252, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(18, 57, 90, 0.08);
+}
+.capcalera .contenidor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--mari);
+}
+.logo__insignia {
+  width: 46px; height: 46px;
+  border-radius: 14px;
+  background: var(--mari);
+  color: var(--groc);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-titols);
+  font-weight: 800;
+  font-size: 1.25rem;
+  transform: rotate(-6deg);
+}
+.logo__text { line-height: 1.05; }
+.logo__text strong { display: block; font-family: var(--font-titols); font-size: 1.2rem; }
+.logo__text span { font-size: 0.8rem; color: var(--text-suau); }
+
+.menu { display: flex; align-items: center; gap: 6px; }
+.menu a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.97rem;
+}
+.menu a:hover { background: var(--crema-2); }
+.menu a.actiu { background: var(--mari); color: var(--blanc); }
+.menu .boto { margin-left: 8px; padding: 10px 20px; color: var(--blanc); }
+
+.boto-menu {
+  display: none;
+  background: none;
+  border: 0;
+  width: 44px; height: 44px;
+  cursor: pointer;
+  padding: 10px;
+}
+.boto-menu span {
+  display: block; height: 3px; background: var(--mari);
+  border-radius: 3px; margin: 5px 0;
+}
+
+/* ---------- 5. Portada (hero) ---------- */
+.hero { padding: 60px 0 90px; position: relative; overflow: hidden; }
+.hero .contenidor {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.hero h1 span { color: var(--accent); }
+.hero .intro { margin-bottom: 30px; }
+.hero__botons { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero__imatge { position: relative; }
+.hero__imatge img {
+  width: 100%;
+  aspect-ratio: 4 / 3.4;
+  object-fit: cover;
+  border-radius: 32px;
+  box-shadow: var(--ombra);
+  background: var(--mari);
+}
+.adhesiu {
+  position: absolute;
+  background: var(--groc);
+  color: var(--mari-fosc);
+  font-family: var(--font-titols);
+  font-weight: 800;
+  border-radius: 50%;
+  width: 128px; height: 128px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  line-height: 1;
+  transform: rotate(-12deg);
+  box-shadow: var(--ombra);
+}
+.adhesiu small { display: block; font-size: 0.8rem; font-weight: 600; }
+.adhesiu b { font-size: 2rem; }
+.hero .adhesiu { left: -36px; bottom: -28px; }
+.hero__etiqueta-foto {
+  position: absolute;
+  left: 18px; top: 18px;
+  background: var(--blanc);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: var(--ombra);
+}
+
+/* ---------- 6. Xifres ---------- */
+.xifres {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.xifra {
+  background: var(--blanc);
+  border-radius: var(--radi);
+  padding: 26px;
+  box-shadow: var(--ombra);
+}
+.xifra b {
+  display: block;
+  font-family: var(--font-titols);
+  font-size: 2.6rem;
+  color: var(--mari);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.xifra span { color: var(--text-suau); font-size: 0.95rem; }
+
+/* ---------- 7. Avís ---------- */
+.avis {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: var(--groc);
+  border-radius: var(--radi);
+  padding: 26px 30px;
+  margin-top: 40px;
+}
+.avis__icona {
+  flex: none;
+  width: 54px; height: 54px;
+  border-radius: 50%;
+  background: var(--mari);
+  color: var(--groc);
+  display: grid; place-items: center;
+  font-size: 1.5rem;
+}
+.avis h3 { margin-bottom: 4px; color: var(--mari-fosc); }
+.avis p { margin: 0; color: var(--mari-fosc); }
+.avis .boto { margin-left: auto; flex: none; }
+
+/* ---------- 8. Torns ---------- */
+.commutador {
+  display: inline-flex;
+  background: var(--crema-2);
+  border-radius: 999px;
+  padding: 5px;
+  margin-bottom: 30px;
+}
+.commutador button {
+  border: 0;
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  color: var(--text-suau);
+  cursor: pointer;
+}
+.commutador button.actiu { background: var(--mari); color: var(--blanc); }
+
+.torns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.torn {
+  border-radius: var(--radi);
+  padding: 28px 24px 30px;
+  color: var(--blanc);
+  position: relative;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+}
+.torn:nth-child(1) { background: var(--taronja); }
+.torn:nth-child(2) { background: var(--blau); }
+.torn:nth-child(3) { background: var(--lila); }
+.torn:nth-child(4) { background: var(--mari); }
+.torn__num {
+  font-family: var(--font-titols);
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 0.9;
+  opacity: 0.95;
+}
+.torn h3 { margin: 10px 0 6px; color: var(--blanc); }
+.torn p { margin: 0; opacity: 0.92; font-weight: 600; }
+.torn__peu { margin-top: auto; padding-top: 18px; font-size: 0.85rem; opacity: 0.85; }
+.nota { font-size: 0.92rem; color: var(--text-suau); margin-top: 22px; }
+
+/* ---------- 9. Targetes de notícies ---------- */
+.graella-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.targeta {
+  background: var(--blanc);
+  border-radius: var(--radi);
+  overflow: hidden;
+  box-shadow: var(--ombra);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+.targeta:hover { transform: translateY(-4px); }
+.targeta__imatge {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  width: 100%;
+  background: var(--crema-2);
+}
+.targeta__imatge--color {
+  display: grid; place-items: center;
+  font-family: var(--font-titols);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--blanc);
+}
+.targeta__cos { padding: 22px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+.targeta__data { font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+.targeta h3 { font-size: 1.2rem; }
+.targeta p { color: var(--text-suau); font-size: 0.97rem; }
+.targeta__enllac { margin-top: auto; font-weight: 700; text-decoration: none; }
+.xip {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--crema-2);
+  color: var(--mari);
+  margin: 0 6px 10px 0;
+}
+
+/* ---------- 10. Calendari / línia de temps ---------- */
+.calendari {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.mes {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radi);
+  padding: 24px;
+}
+.mes__quan {
+  font-family: var(--font-titols);
+  font-weight: 800;
+  color: var(--groc);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+.mes h3 { font-size: 1.1rem; margin-bottom: 6px; }
+.mes p { margin: 0; font-size: 0.95rem; color: #d3e3ef; }
+.mes--destacat { background: var(--groc); border-color: var(--groc); }
+.mes--destacat .mes__quan, .mes--destacat h3, .mes--destacat p { color: var(--mari-fosc); }
+
+/* ---------- 11. Dues columnes ---------- */
+.dues-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.llista-check { list-style: none; padding: 0; margin: 0 0 28px; }
+.llista-check li {
+  padding-left: 34px;
+  position: relative;
+  margin-bottom: 12px;
+}
+.llista-check li::before {
+  content: "✓";
+  position: absolute; left: 0; top: 1px;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--groc);
+  color: var(--mari-fosc);
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: grid; place-items: center;
+}
+.imatge-arrodonida { border-radius: 32px; box-shadow: var(--ombra); width: 100%; object-fit: cover; }
+
+/* ---------- 12. Capçalera de pàgines interiors ---------- */
+.cap-pagina {
+  background: var(--mari);
+  color: var(--crema);
+  padding: 70px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.cap-pagina h1 { color: var(--blanc); font-size: clamp(2.2rem, 5vw, 3.6rem); }
+.cap-pagina .intro { color: #d3e3ef; }
+.cap-pagina::after {
+  content: "";
+  position: absolute;
+  right: -80px; top: -80px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: var(--groc);
+  opacity: 0.9;
+}
+.cap-pagina .contenidor { position: relative; z-index: 1; }
+.molla { font-size: 0.9rem; margin-bottom: 14px; }
+.molla a { color: var(--groc); }
+
+/* ---------- 13. Línia de temps (Història) ---------- */
+.linia-temps { position: relative; padding-left: 40px; }
+.linia-temps::before {
+  content: "";
+  position: absolute; left: 11px; top: 6px; bottom: 6px;
+  width: 3px; background: var(--crema-2); border-radius: 3px;
+}
+.fita { position: relative; margin-bottom: 34px; }
+.fita::before {
+  content: "";
+  position: absolute; left: -37px; top: 6px;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--accent);
+  border: 4px solid var(--crema);
+}
+.fita__any {
+  font-family: var(--font-titols);
+  font-weight: 800;
+  font-size: 1.7rem;
+  color: var(--mari);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.fita p { color: var(--text-suau); margin: 0; }
+
+/* ---------- 14. Passos (inscripcions) ---------- */
+.passos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: pas; }
+.pas {
+  background: var(--blanc);
+  border-radius: var(--radi);
+  padding: 28px 24px;
+  box-shadow: var(--ombra);
+  position: relative;
+}
+.pas::before {
+  counter-increment: pas;
+  content: counter(pas);
+  display: grid; place-items: center;
+  width: 44px; height: 44px;
+  border-radius: 14px;
+  background: var(--accent);
+  color: var(--blanc);
+  font-family: var(--font-titols);
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+}
+.pas h3 { font-size: 1.15rem; }
+.pas p { margin: 0; color: var(--text-suau); font-size: 0.97rem; }
+
+.preus { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.preu {
+  border-radius: var(--radi);
+  padding: 30px 26px;
+  background: var(--blanc);
+  border: 2px solid var(--crema-2);
+}
+.preu--destacat { background: var(--mari); color: var(--blanc); border-color: var(--mari); }
+.preu--destacat h3, .preu--destacat .preu__xifra { color: var(--groc); }
+.preu__xifra {
+  font-family: var(--font-titols);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--mari);
+  line-height: 1;
+  margin: 8px 0 12px;
+}
+.preu p { margin: 0; font-size: 0.97rem; }
+
+.caixa {
+  background: var(--blanc);
+  border-radius: var(--radi);
+  padding: 32px;
+  box-shadow: var(--ombra);
+}
+.caixa--groga { background: var(--groc); box-shadow: none; }
+.caixa ul { margin: 0; padding-left: 20px; }
+.caixa li { margin-bottom: 8px; }
+.codi {
+  font-family: ui-monospace, monospace;
+  background: var(--crema-2);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.95em;
+  white-space: nowrap;
+}
+
+/* ---------- 15. FAQ (acordió) ---------- */
+.faq-filtres { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
+.faq-filtres button {
+  border: 2px solid var(--crema-2);
+  background: var(--blanc);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--text);
+}
+.faq-filtres button.actiu { background: var(--mari); border-color: var(--mari); color: var(--blanc); }
+.cercador {
+  width: 100%;
+  padding: 16px 22px;
+  border-radius: 999px;
+  border: 2px solid var(--crema-2);
+  font: inherit;
+  margin-bottom: 18px;
+  background: var(--blanc);
+}
+.cercador:focus { outline: none; border-color: var(--mari); }
+.faq details {
+  background: var(--blanc);
+  border-radius: var(--radi-petit);
+  margin-bottom: 12px;
+  box-shadow: 0 2px 10px rgba(18, 57, 90, 0.06);
+}
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 20px 60px 20px 24px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  position: relative;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+";
+  position: absolute; right: 20px; top: 50%;
+  transform: translateY(-50%);
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--crema-2);
+  display: grid; place-items: center;
+  font-size: 1.3rem;
+  color: var(--mari);
+}
+.faq details[open] summary::after { content: "–"; background: var(--groc); }
+.faq details > div { padding: 0 24px 22px; color: var(--text-suau); }
+.faq details > div p:last-child { margin: 0; }
+
+/* ---------- 16. Documents ---------- */
+.docs { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 14px; }
+.doc {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none;
+  background: var(--blanc);
+  border-radius: var(--radi-petit);
+  padding: 20px;
+  color: var(--text);
+  border: 2px solid transparent;
+  transition: border-color 0.15s ease;
+}
+.doc:hover { border-color: var(--accent); }
+.doc b { font-family: var(--font-titols); font-size: 1.6rem; color: var(--mari); }
+.doc span { font-size: 0.88rem; color: var(--text-suau); }
+.doc--nou { background: var(--groc); }
+
+/* ---------- 17. Bloc de seguiment (Instagram) ---------- */
+.segueix {
+  background: var(--accent);
+  color: var(--blanc);
+  border-radius: 36px;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.segueix h2 { color: var(--blanc); }
+.segueix p { opacity: 0.95; }
+.segueix__canals { display: grid; gap: 12px; }
+.canal {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  padding: 16px 20px;
+  color: var(--blanc);
+  text-decoration: none;
+  font-weight: 700;
+}
+.canal:hover { background: rgba(255, 255, 255, 0.26); }
+.canal small { display: block; font-weight: 500; opacity: 0.85; }
+.canal__icona { font-size: 1.5rem; }
+
+/* ---------- 18. Peu de pàgina ---------- */
+.peu {
+  background: var(--mari-fosc);
+  color: #d3e3ef;
+  padding: 70px 0 30px;
+  font-size: 0.95rem;
+}
+.peu a { color: #d3e3ef; text-decoration: none; }
+.peu a:hover { color: var(--groc); }
+.peu__graella {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+.peu h4 { color: var(--blanc); font-size: 1rem; margin-bottom: 14px; }
+.peu ul { list-style: none; padding: 0; margin: 0; }
+.peu li { margin-bottom: 8px; }
+.peu .logo { color: var(--blanc); margin-bottom: 16px; }
+.peu .logo__text span { color: #93aec4; }
+.peu__final {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #93aec4;
+}
+
+/* ---------- 19. Responsive (mòbil i tauleta) ---------- */
+@media (max-width: 980px) {
+  .torns, .calendari, .passos { grid-template-columns: repeat(2, 1fr); }
+  .xifres { grid-template-columns: repeat(2, 1fr); }
+  .graella-3, .preus { grid-template-columns: 1fr 1fr; }
+  .peu__graella { grid-template-columns: 1fr 1fr; }
+  .segueix { grid-template-columns: 1fr; padding: 40px; }
+}
+
+@media (max-width: 860px) {
+  .boto-menu { display: block; }
+  .menu {
+    position: absolute;
+    top: 76px; left: 0; right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--crema);
+    padding: 16px 20px 24px;
+    border-bottom: 1px solid rgba(18, 57, 90, 0.1);
+    display: none;
+  }
+  .menu.obert { display: flex; }
+  .menu a { padding: 12px 16px; }
+  .menu .boto { margin: 8px 0 0; justify-content: center; }
+  .hero .contenidor, .dues-col { grid-template-columns: 1fr; }
+  .hero .adhesiu { left: auto; right: 16px; bottom: -36px; width: 104px; height: 104px; }
+  .avis { flex-direction: column; align-items: flex-start; }
+  .avis .boto { margin-left: 0; }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .seccio { padding: 64px 0; }
+  .torns, .calendari, .passos, .graella-3, .preus, .xifres { grid-template-columns: 1fr; }
+  .peu__graella { grid-template-columns: 1fr; }
+  .segueix { padding: 32px 24px; border-radius: 28px; }
+}
+
+/* =========================================================
+   20. Trets d'Arenys de Munt (vermell i blanc)
+   ========================================================= */
+:root {
+  --vermell: #d0232a;     /* vermell d'Arenys de Munt */
+  --vermell-fosc: #a5161c;
+  --ratlles: repeating-linear-gradient(135deg, var(--vermell) 0 10px, #fff 10px 20px);
+}
+
+/* Franja superior vermella i blanca */
+.franja-arenys {
+  background: var(--vermell);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.franja-arenys .contenidor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  height: 36px;
+}
+.franja-arenys a { color: #fff; text-decoration: none; }
+.franja-arenys__ratlles {
+  width: 64px; height: 14px; border-radius: 4px;
+  background: var(--ratlles);
+  border: 2px solid #fff;
+  flex: none;
+}
+.franja-arenys__dreta { display: flex; align-items: center; gap: 14px; }
+@media (max-width: 600px) { .franja-arenys__amaga { display: none; } }
+
+/* Insígnia del logo amb peu vermell i blanc */
+.logo__insignia { position: relative; overflow: hidden; }
+.logo__insignia::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0; height: 7px;
+  background: var(--ratlles);
+  background-size: 14px 14px;
+}
+
+/* Adhesiu "Amunt Arenys!" */
+.adhesiu--vermell {
+  background: var(--vermell);
+  color: #fff;
+  width: 112px; height: 112px;
+  transform: rotate(10deg);
+  border: 4px dashed rgba(255, 255, 255, 0.7);
+}
+.adhesiu--vermell b { font-size: 1.35rem; }
+.hero .adhesiu--vermell { left: auto; right: -24px; bottom: auto; top: -30px; }
+
+/* Capçalera de pàgines interiors: cercle de ratlles vermelles i blanques */
+.cap-pagina::after { background: var(--ratlles); opacity: 1; }
+.cap-pagina::before {
+  content: "";
+  position: absolute;
+  right: 150px; bottom: -60px;
+  width: 140px; height: 140px; border-radius: 50%;
+  background: var(--groc);
+}
+
+/* Secció "Arrelats a Arenys de Munt" */
+.arenys {
+  background: var(--vermell);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.arenys h2, .arenys h3 { color: #fff; }
+.arenys .etiqueta { color: var(--groc); }
+.arenys .intro { color: #ffe3e1; }
+/* Patró de punta de coixí (les puntaires d'Arenys) */
+.arenys::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(circle at 50% 50%, transparent 7px, rgba(255,255,255,0.13) 8px, rgba(255,255,255,0.13) 9px, transparent 10px),
+    radial-gradient(circle at 0 0, rgba(255,255,255,0.13) 2px, transparent 3px);
+  background-size: 34px 34px;
+  pointer-events: none;
+}
+.arenys .contenidor { position: relative; }
+.trets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.tret {
+  background: #fff;
+  color: var(--text);
+  border-radius: var(--radi);
+  padding: 26px 24px;
+}
+.tret h3 { color: var(--vermell); font-size: 1.15rem; margin-bottom: 8px; }
+.tret p { margin: 0; color: var(--text-suau); font-size: 0.95rem; }
+.tret__icona { font-size: 1.8rem; margin-bottom: 10px; }
+.lema-sardana {
+  margin-top: 40px;
+  text-align: center;
+  font-family: var(--font-titols);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  letter-spacing: -0.01em;
+}
+.lema-sardana small { display: block; font-family: var(--font-text); font-weight: 500; font-size: 0.95rem; color: #ffe3e1; margin-top: 6px; }
+
+/* Serralada (Corredor i Montalt) sobre el peu de pàgina */
+.serralada { display: block; width: 100%; height: 90px; margin-bottom: -1px; }
+.peu { border-top: 6px solid var(--vermell); }
+
+@media (max-width: 980px) {
+  .trets { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .trets { grid-template-columns: 1fr; }
+  .hero .adhesiu--vermell { right: 10px; top: -24px; width: 92px; height: 92px; }
+}
+
+/* =========================================================
+   21. Logo (posa el fitxer a img/logo.png)
+   ========================================================= */
+.logo__insignia img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  background: #fff;
+  z-index: 2;
+}
+.logo__insignia:has(img) { transform: none; background: #fff; }
+
+/* =========================================================
+   22. Compte enrere fins a les colònies
+   ========================================================= */
+.compte {
+  background: var(--mari);
+  color: #fff;
+  border-radius: 32px;
+  padding: 40px 44px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 30px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.compte h2 { color: #fff; font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 6px; }
+.compte p { margin: 0; color: #d3e3ef; }
+.compte .etiqueta { color: var(--groc); }
+.compte__caselles { display: flex; gap: 12px; }
+.casella {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  min-width: 92px;
+  padding: 14px 10px 12px;
+  text-align: center;
+}
+.casella b {
+  display: block;
+  font-family: var(--font-titols);
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--groc);
+  font-variant-numeric: tabular-nums;
+}
+.casella span { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #d3e3ef; }
+.casella--dies { background: var(--groc); border-color: var(--groc); }
+.casella--dies b, .casella--dies span { color: var(--mari-fosc); }
+@media (max-width: 860px) {
+  .compte { grid-template-columns: 1fr; padding: 32px 26px; }
+  .compte__caselles { flex-wrap: wrap; }
+  .casella { min-width: 72px; flex: 1; }
+  .casella b { font-size: 2rem; }
+}
+
+/* =========================================================
+   23. Fotos del poble
+   ========================================================= */
+.tret { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.tret__foto { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #f3c9c9; }
+.tret__cos { padding: 20px 22px 24px; }
+.galeria {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 14px;
+  margin-top: 40px;
+}
+.galeria figure { margin: 0; position: relative; border-radius: var(--radi); overflow: hidden; background: #f3c9c9; min-height: 220px; }
+.galeria img { width: 100%; height: 100%; object-fit: cover; }
+.galeria figcaption {
+  position: absolute; left: 12px; bottom: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--text);
+  font-size: 0.82rem; font-weight: 700;
+  padding: 5px 12px; border-radius: 999px;
+}
+.credits { font-size: 0.78rem; color: #ffe3e1; margin-top: 18px; }
+.credits a { color: #fff; }
+@media (max-width: 860px) { .galeria { grid-template-columns: 1fr 1fr; } .galeria figure:first-child { grid-column: 1 / -1; } }
+
+/* =========================================================
+   24. Logo de les Catecolònies (img/logo.png i img/logo-blanc.png)
+   ========================================================= */
+.logo__img { height: 38px; width: auto; display: block; }
+.peu .logo__img { height: 34px; margin-bottom: 4px; }
+@media (max-width: 600px) { .logo__img { height: 26px; } }
+
+/* Calendari: activitats per col·laborar amb les KT */
+.mes { display: flex; flex-direction: column; }
+.mes__xip {
+  align-self: flex-start;
+  margin-top: 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 200, 61, 0.18);
+  color: var(--groc);
+}
+.mes--collabora { border-color: rgba(255, 200, 61, 0.45); }
+.calendari__nota {
+  margin: 28px 0 0;
+  padding: 18px 22px;
+  border-radius: var(--radi-petit);
+  background: rgba(255, 255, 255, 0.07);
+  color: #d3e3ef;
+}
+
+/* =========================================================
+   25. Història (secció "D'on venim")
+   ========================================================= */
+.historia {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+.historia__text p { color: var(--text-suau); font-size: 1.05rem; }
+.historia__text b { color: var(--vermell); }
+.historia__fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  position: sticky;
+  top: 100px;
+}
+.historia__foto {
+  margin: 0;
+  border-radius: var(--radi);
+  overflow: hidden;
+  border: 5px solid #fff;
+  box-shadow: var(--ombra);
+  background: #fff;
+}
+.historia__foto img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+.historia__foto--gran { grid-column: 1 / -1; transform: rotate(-1.5deg); }
+.historia__foto--gran img { aspect-ratio: 3 / 2; }
+.historia__foto:nth-child(2) { transform: rotate(2deg); }
+.historia__foto:nth-child(3) { transform: rotate(-2deg); }
+@media (max-width: 860px) {
+  .historia { grid-template-columns: 1fr; }
+  .historia__fotos { position: static; }
+}
+
+/* Menú: el text "Qui som i d'on venim" és llarg, evitem que es parteixi */
+.menu a { white-space: nowrap; padding: 8px 12px; }
+.logo__img { height: 34px; }
+@media (max-width: 1340px) {
+  .boto-menu { display: block; }
+  .menu {
+    position: absolute;
+    top: 76px; left: 0; right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--crema);
+    padding: 16px 20px 24px;
+    border-bottom: 1px solid rgba(18, 57, 90, 0.1);
+    display: none;
+  }
+  .menu.obert { display: flex; }
+  .menu a { padding: 12px 16px; }
+  .menu .boto { margin: 8px 0 0; justify-content: center; }
+}
+@media (max-width: 600px) { .logo__img { height: 26px; } }
+
+/* Qui fa possibles les KT */
+.equips { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.equip {
+  border-radius: var(--radi);
+  padding: 34px 18px;
+  text-align: center;
+  font-family: var(--font-titols);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  min-height: 130px;
+}
+.equip:nth-child(1) { background: var(--taronja); }
+.equip:nth-child(2) { background: var(--blau); }
+.equip:nth-child(3) { background: var(--lila); }
+.equip:nth-child(4) { background: var(--mari); }
+.equip:nth-child(5) { background: var(--groc); color: var(--mari-fosc); }
+@media (max-width: 980px) { .equips { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) { .equips { grid-template-columns: 1fr 1fr; } .equip:last-child { grid-column: 1 / -1; } }
+
+/* Inscripcions: nota destacada dins d'un pas */
+.pas p.pas__destacat {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: var(--radi-petit);
+  background: var(--groc);
+  color: var(--mari-fosc);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.pas__destacat b { font-family: var(--font-titols); font-size: 1.1rem; white-space: nowrap; }
+
+/* Preus: llista de pagaments */
+.preu__llista { margin: 0; padding-left: 20px; }
+.preu__llista li { margin-bottom: 8px; font-size: 0.97rem; }
+.preu__llista b { color: var(--groc); }
+.preu:not(.preu--destacat) .preu__llista b { color: var(--mari); }
+.preus--2 { grid-template-columns: 1fr 1fr; }
+@media (max-width: 600px) { .preus--2 { grid-template-columns: 1fr; } }
+
+/* Menú en majúscules */
+.menu a { text-transform: uppercase; font-size: 0.88rem; letter-spacing: 0.03em; }
+
+/* Preu germans destacat */
+.preu--germans { background: var(--accent); border-color: var(--accent); color: #fff; }
+.preu--germans h3, .preu--germans .preu__xifra { color: #fff; }
+.preu.preu--germans .preu__llista b { color: var(--groc); }
+
+/* =========================================================
+   26. KT Fotos (vídeos)
+   ========================================================= */
+.video-proper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
+  align-items: center;
+  background: var(--mari);
+  color: #fff;
+  border-radius: 32px;
+  padding: 36px 40px;
+}
+.video-proper h2 { color: #fff; font-size: clamp(1.4rem, 2.6vw, 2rem); margin-bottom: 6px; }
+.video-proper p { margin: 0; color: #d3e3ef; }
+.video-proper .etiqueta { color: var(--groc); }
+.video-proper__any {
+  font-family: var(--font-titols);
+  font-weight: 800;
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--groc);
+}
+
+.video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radi);
+  overflow: hidden;
+  background: var(--mari-fosc);
+  box-shadow: var(--ombra);
+}
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video__portada {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0; padding: 0;
+  cursor: pointer;
+  background: var(--mari-fosc);
+  display: grid; place-items: center;
+}
+.video__portada img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.video__portada:hover img { transform: scale(1.05); }
+.video__portada--color {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 174, 234, 0.55), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255, 200, 61, 0.45), transparent 50%),
+    var(--mari);
+}
+.video__any-gran {
+  position: absolute;
+  left: 32px; bottom: 18px;
+  font-family: var(--font-titols);
+  font-weight: 800;
+  font-size: clamp(3rem, 10vw, 8rem);
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.92);
+}
+.video__play {
+  position: relative;
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  background: var(--groc);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+.video__play::after {
+  content: "";
+  position: absolute;
+  left: 30px; top: 22px;
+  border-left: 24px solid var(--mari-fosc);
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+}
+.video__portada:hover .video__play { transform: scale(1.1); }
+.video--gran .video__play { width: 96px; height: 96px; }
+.video--gran .video__play::after { left: 38px; top: 28px; border-left-width: 30px; border-top-width: 20px; border-bottom-width: 20px; }
+
+.videos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.video-targeta__peu {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 4px 0;
+}
+.video-targeta__peu b { font-family: var(--font-titols); font-size: 1.8rem; color: var(--mari); }
+.video-targeta__peu a { font-size: 0.9rem; font-weight: 700; text-decoration: none; color: var(--accent); }
+
+@media (max-width: 980px) {
+  .videos { grid-template-columns: 1fr 1fr; }
+  .video-proper { grid-template-columns: 1fr; text-align: left; }
+}
+@media (max-width: 600px) {
+  .videos { grid-template-columns: 1fr; }
+  .video__play { width: 60px; height: 60px; }
+  .video__play::after { left: 24px; top: 17px; border-left-width: 18px; border-top-width: 13px; border-bottom-width: 13px; }
+}
+
+/* =========================================================
+   27. Mini-KT
+   ========================================================= */
+.comparativa { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.comparativa__col {
+  background: var(--blanc);
+  border-radius: var(--radi);
+  padding: 30px;
+  box-shadow: var(--ombra);
+}
+.comparativa__col--mini { background: var(--taronja); color: #fff; box-shadow: none; }
+.comparativa__nom {
+  display: inline-block;
+  font-family: var(--font-titols);
+  font-weight: 800;
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+  color: var(--mari);
+}
+.comparativa__col--mini .comparativa__nom { color: #fff; }
+.comparativa dl { margin: 0; display: grid; gap: 14px; }
+.comparativa dl div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; }
+.comparativa dt { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.75; padding-top: 3px; }
+.comparativa dd { margin: 0; }
+
+.minikt { display: grid; grid-template-columns: 300px 1fr; gap: 44px; align-items: start; }
+.minikt__cartell { width: 100%; border-radius: var(--radi); box-shadow: var(--ombra); }
+.minikt__lema { font-family: var(--font-titols); font-weight: 800; font-size: 1.5rem; color: var(--mari); margin-bottom: 22px; }
+.minikt__dades { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 30px; }
+.minikt__dades div { background: var(--crema); border-radius: var(--radi-petit); padding: 14px 16px; }
+.minikt__dades span { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); }
+.minikt__dades b { display: block; font-family: var(--font-titols); font-size: 1.15rem; color: var(--mari); }
+.minikt__dades small { color: var(--text-suau); }
+.minikt__llistes { gap: 30px; align-items: start; }
+.minikt__llistes h3 { font-size: 1.1rem; }
+.minikt__motxilla { columns: 2; column-gap: 20px; padding-left: 18px; margin: 0; font-size: 0.95rem; color: var(--text-suau); }
+.minikt__motxilla li { margin-bottom: 6px; break-inside: avoid; }
+p.minikt__avis { margin-top: 10px; padding: 14px 18px; border-radius: var(--radi-petit); background: var(--groc); color: var(--mari-fosc); font-weight: 600; }
+.minikt__avis a { color: var(--mari-fosc); }
+
+.linia-mini { display: grid; gap: 16px; }
+.fita-mini {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 24px;
+  align-items: center;
+  background: var(--blanc);
+  border-radius: var(--radi);
+  padding: 22px 28px;
+  box-shadow: 0 2px 10px rgba(18, 57, 90, 0.06);
+}
+.fita-mini__any { font-family: var(--font-titols); font-weight: 800; font-size: 2.4rem; color: var(--taronja); line-height: 1; }
+.fita-mini h3 { margin: 4px 0 4px; font-size: 1.15rem; }
+.fita-mini p { margin: 0; color: var(--text-suau); }
+.fita-mini .xip { margin-bottom: 0; }
+
+@media (max-width: 980px) {
+  .minikt { grid-template-columns: 1fr; }
+  .minikt__cartell { max-width: 320px; }
+  .minikt__dades { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 700px) {
+  .comparativa { grid-template-columns: 1fr; }
+  .fita-mini { grid-template-columns: 1fr; gap: 6px; }
+  .minikt__motxilla { columns: 1; }
+}
+
+/* Menú amb 8 pestanyes: més compacte */
+.logo { flex: none; }
+.menu { gap: 2px; }
+.menu a { padding: 8px 10px; font-size: 0.82rem; letter-spacing: 0.02em; }
+.menu .boto { margin-left: 6px; padding: 10px 16px; }
+@media (max-width: 1340px) { .menu a { padding: 12px 16px; font-size: 0.95rem; } }
+.capcalera .contenidor { gap: 24px; }
+
+/* Logos de suport al peu de pàgina */
+.suport { display: grid; gap: 12px; }
+.suport__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: var(--radi-petit);
+  padding: 12px 16px;
+  height: 72px;
+}
+.suport__logo img { max-height: 100%; max-width: 100%; object-fit: contain; }
+a.suport__logo { transition: transform 0.15s ease; }
+a.suport__logo:hover { transform: translateY(-2px); }
+
+/* =========================================================
+   28. Capçalera de les pàgines interiors (foto de fons)
+   Cada pàgina té la seva foto (mira el final d'aquesta secció)
+   ========================================================= */
+.cap-pagina {
+  background:
+    linear-gradient(90deg, rgba(11, 39, 64, 0.94) 0%, rgba(11, 39, 64, 0.78) 45%, rgba(11, 39, 64, 0.35) 100%),
+    var(--foto, none) center 40% / cover no-repeat,
+    var(--mari);
+  padding: 96px 0 104px;
+}
+.cap-pagina::before, .cap-pagina::after { display: none; }
+.cap-pagina h1 { margin-bottom: 14px; }
+.cap-pagina .intro { color: #e3edf5; max-width: 560px; font-size: 1.2rem; }
+.cap-pagina .molla { color: #b9cfe0; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; font-weight: 700; }
+.cap-pagina .molla a { color: var(--groc); text-decoration: none; }
+.cap-pagina h1::after {
+  content: "";
+  display: block;
+  width: 64px; height: 5px;
+  border-radius: 5px;
+  background: var(--groc);
+  margin-top: 18px;
+}
+@media (max-width: 600px) { .cap-pagina { padding: 64px 0 72px; } }
+
+/* Foto de cada capçalera (canvia el nom del fitxer per posar-ne una altra) */
+.cap-pagina--qui-som { --foto: url('../img/qui-som-placa.jpg'); }
+.cap-pagina--inscripcions { --foto: url('../img/kt-placa-esglesia.jpg'); }
+.cap-pagina--minikt { --foto: url('../img/historia-primeres-kt.jpg'); }
+.cap-pagina--kt-fotos { --foto: url('../img/cap-placa-2.jpg'); }
+.cap-pagina--noticies { --foto: url('../img/cap-placa-bandera.jpg'); }
+.cap-pagina--faq { --foto: url('../img/historia-ball-placa.jpg'); }
+.cap-pagina--documents { --foto: url('../img/historia-foto-grup.jpg'); }
+.cap-pagina--inscripcions, .cap-pagina--kt-fotos, .cap-pagina--noticies { background-position: 0 0, center 75%, 0 0; }
+
+/* Icona d'Instagram a la capçalera */
+.capcalera .contenidor { justify-content: flex-start; }
+.capcalera .menu { margin-left: auto; }
+.insta {
+  order: 3;
+  flex: none;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  color: var(--mari);
+  background: var(--crema-2);
+  margin-left: 10px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.insta:hover { background: var(--mari); color: #fff; }
+.boto-menu { order: 4; }
+@media (max-width: 1340px) {
+  .insta { margin-left: auto; }
+  .boto-menu { margin-left: 8px; }
+}

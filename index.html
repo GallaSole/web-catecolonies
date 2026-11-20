@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catecolònies Sant Martí · Arenys de Munt</title>
+  <meta name="description" content="Colònies educatives d'Arenys de Munt des de 1984. De l'1 al 10 d'agost, quatre torns i una gran família de voluntaris.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estil.css">
+</head>
+<body>
+
+  <!-- ===== CAPÇALERA (igual a totes les pàgines) ===== -->
+  <header class="capcalera">
+    <div class="contenidor">
+      <a href="index.html" class="logo" aria-label="Catecolònies Sant Martí d'Arenys de Munt – Inici">
+        <img class="logo__img" src="img/logo.png" alt="Catecolònies Sant Martí d'Arenys de Munt">
+      </a>
+      <a class="insta" href="https://www.instagram.com/ktcolonies/" target="_blank" rel="noopener" aria-label="Instagram de les Catecolònies (@ktcolonies)">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>
+      </a>
+      <button class="boto-menu" aria-label="Obrir el menú" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="menu">
+        <a href="index.html" class="actiu">Inici</a>
+        <a href="qui-som.html">Qui som i d'on venim</a>
+        <a href="inscripcions.html">Inscripcions</a>
+        <a href="minikt.html">Mini-KT</a>
+        <a href="kt-fotos.html">KT Fotos</a>
+        <a href="noticies.html">Notícies</a>
+        <a href="faq.html">FAQ</a>
+        <a href="documents.html">Documents</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== PORTADA ===== -->
+    <section class="hero">
+      <div class="contenidor">
+        <div>
+          <span class="etiqueta">Colònies educatives · Arenys de Munt</span>
+          <h1>Deu dies d'estiu que <span>no s'obliden</span></h1>
+          <p class="intro">Cada any, de l'1 al 10 d'agost, centenars d'infants i joves d'Arenys de Munt marxen de colònies. Quatre torns i una gran família de voluntaris que ho fa possible.</p>
+          <div class="hero__botons">
+            <a href="inscripcions.html" class="boto boto--principal">Com m'hi apunto? →</a>
+            <a href="qui-som.html" class="boto boto--contorn">Coneix-nos</a>
+          </div>
+        </div>
+        <div class="hero__imatge">
+          <!-- Foto d'Instagram (@ktcolonies, 20/10/2026) -->
+          <img src="img/kt-placa-esglesia.jpg" alt="Les Catecolònies a la plaça de l'Església d'Arenys de Munt">
+          <div class="adhesiu"><div><small>des de</small><b>1984</b></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== XIFRES + AVÍS ===== -->
+    <section class="seccio" style="padding-top: 0;">
+      <div class="contenidor">
+        <!-- Compte enrere: es calcula sol a js/main.js -->
+        <div class="compte" data-compte>
+          <div>
+            <span class="etiqueta">Compte enrere</span>
+            <h2 data-compte-titol>Falten pocs dies per a les KT!</h2>
+            <p data-compte-text>Sortim l'1 d'agost. Ja tens la motxilla a punt?</p>
+          </div>
+          <div class="compte__caselles">
+            <div class="casella casella--dies"><b data-dies>–</b><span>dies</span></div>
+            <div class="casella"><b data-hores>–</b><span>hores</span></div>
+            <div class="casella"><b data-minuts>–</b><span>minuts</span></div>
+            <div class="casella"><b data-segons>–</b><span>segons</span></div>
+          </div>
+        </div>
+
+        <div class="avis">
+          <div class="avis__icona">📣</div>
+          <div>
+            <h3>Pròximament: PREINSCRIPCIONS 2027</h3>
+            <p>Normalment s'obren entre febrer i març. Ho anunciarem aquí, per correu a les famílies i a Instagram.</p>
+          </div>
+          <a href="inscripcions.html" class="boto boto--principal">Com funciona</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TORNS ===== -->
+    <section class="seccio seccio--blanca" id="torns">
+      <div class="contenidor">
+        <div class="capcalera-seccio">
+          <span class="etiqueta">Els torns</span>
+          <h2>Un torn per a cada edat</h2>
+          <p class="intro">Cada torn té la seva casa, el seu equip de monitors i la seva cuina. Comencem a 4t de Primària i arribem fins a 1r de Batxillerat.</p>
+        </div>
+
+        <div class="torns">
+          <article class="torn">
+            <div class="torn__num">1r</div>
+            <h3>Primer torn</h3>
+            <p>4t i 5è de Primària</p>
+          </article>
+          <article class="torn">
+            <div class="torn__num">2n</div>
+            <h3>Segon torn</h3>
+            <p>6è de Primària i 1r d'ESO</p>
+          </article>
+          <article class="torn">
+            <div class="torn__num">3r</div>
+            <h3>Tercer torn</h3>
+            <p>2n i 3r d'ESO</p>
+          </article>
+          <article class="torn">
+            <div class="torn__num">4t</div>
+            <h3>Quart torn</h3>
+            <p>4t d'ESO i 1r de Batxillerat</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NOTÍCIES ===== -->
+    <section class="seccio">
+      <div class="contenidor">
+        <div class="capcalera-seccio" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;">
+          <div>
+            <span class="etiqueta">Què ha passat</span>
+            <h2>Últimes notícies</h2>
+          </div>
+          <a href="noticies.html" class="boto boto--contorn">Totes les notícies</a>
+        </div>
+        <div class="graella-3">
+          <article class="targeta">
+            <img class="targeta__imatge" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifReGPxGMSXN21Ri8WCr51BBtRMZh9ynou29gDkE1t4rNM8WxUZqPMhoAOmpgd_PN6tLnr5Er6khYft8WA3H486GsFmDZTrK8q7XnQXIhOuCxSQYGaQgxAiyiZ8MYBylTvlvvAIYAfRxTmbbmDxzxTVd2E7KYsQ4u7P0z_ed7T1_JODYF6VbXuO_iZ65-P/w600/CARTELL%20DIAPOS%2026.jpg" alt="Cartell de les Diapos 26">
+            <div class="targeta__cos">
+              <div class="targeta__data">10 d'octubre de 2026</div>
+              <h3>KT Fotos 2026</h3>
+              <p>Les diapos de l'estiu, el 24 d'octubre a la Sala Municipal, amb sessions a les 17 h i a les 19 h.</p>
+              <a href="noticies.html#kt-fotos" class="targeta__enllac">Llegeix-ne més →</a>
+            </div>
+          </article>
+          <article class="targeta">
+            <div class="targeta__imatge targeta__imatge--color" style="background: var(--blau);">📻</div>
+            <div class="targeta__cos">
+              <div class="targeta__data">8 d'agost de 2026</div>
+              <h3>Comunicacions amb la ràdio</h3>
+              <p>Els podcasts de cada torn a Ràdio Arenys de Munt, del 3 al 9 d'agost.</p>
+              <a href="noticies.html#radio" class="targeta__enllac">Llegeix-ne més →</a>
+            </div>
+          </article>
+          <article class="targeta">
+            <img class="targeta__imatge" src="https://blogger.googleusercontent.com/img/a/AVvXsEiOxD6n5hS6pFUnAA_TYbFOUG0EFb5EqQKoYk5ZI8G_ov4xulKBetSCPbm_elPZTv_ZHPaOPJ-206-9MjsCUk2zfDZutUapQBFYCrduYZdz1prgUWoyURhtz_-9Cs4zalu9JsjYsCo35cr1MKS_d_s8NQHAsSc5aNx0jB6SgXh-tFjiC-lBCKdhy37R_nJM=w600" alt="Inici de les KT 2026">
+            <div class="targeta__cos">
+              <div class="targeta__data">1 d'agost de 2026</div>
+              <h3>Unes noves KT que engeguen!</h3>
+              <p>Vuit autocars plens i el 2n torn fent a peu la primera etapa.</p>
+              <a href="noticies.html#sortida" class="targeta__enllac">Llegeix-ne més →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CALENDARI DE L'ANY ===== -->
+    <section class="seccio seccio--fosca">
+      <div class="contenidor">
+        <div class="capcalera-seccio">
+          <h2>Dates destacades</h2>
+        </div>
+        <div class="calendari">
+          <div class="mes">
+            <div class="mes__quan">Febrer – març</div>
+            <h3>Preinscripció en línia</h3>
+            <p>Dades de l'infant i comprovant de la paga i senyal de 50 €.</p>
+          </div>
+          <div class="mes mes--collabora">
+            <div class="mes__quan">Principis de maig</div>
+            <h3>KT Flors</h3>
+            <p>Venda de flors per al Dia de la Mare a la plaça de l'Església.</p>
+            <span class="mes__xip">Col·labora amb les KT</span>
+          </div>
+          <div class="mes">
+            <div class="mes__quan">Finals de maig – juny</div>
+            <h3>Inscripcions i reunió</h3>
+            <p>Al Centre Moral: entrega de documents i reunió informativa per a famílies.</p>
+          </div>
+          <div class="mes">
+            <div class="mes__quan">Mitjans de juliol</div>
+            <h3>Dossier de l'any</h3>
+            <p>Horaris, contactes, activitats, menús i què cal portar.</p>
+          </div>
+          <div class="mes mes--destacat">
+            <div class="mes__quan">1 – 10 d'agost</div>
+            <h3>Catecolònies!</h3>
+            <p>Deu dies, quatre torns, quatre cases.</p>
+          </div>
+          <div class="mes mes--collabora">
+            <div class="mes__quan">Tardor</div>
+            <h3>KT Fotos</h3>
+            <p>Les fotos i diapos de tots els torns, a Arenys de Munt.</p>
+            <span class="mes__xip">Col·labora amb les KT</span>
+          </div>
+          <div class="mes mes--collabora">
+            <div class="mes__quan">Per Nadal</div>
+            <h3>KT Quina</h3>
+            <p>La quina nadalenca de les KT, a la Sala Municipal.</p>
+            <span class="mes__xip">Col·labora amb les KT</span>
+          </div>
+          <div class="mes mes--collabora">
+            <div class="mes__quan">Cap d'any</div>
+            <h3>Barra de les KT</h3>
+            <p>Després de les campanades, la barra de les KT a la plaça de l'Església.</p>
+            <span class="mes__xip">Col·labora amb les KT</span>
+          </div>
+        </div>
+        <p class="calendari__nota">Les KT Flors, les KT Fotos, la KT Quina i la barra de Cap d'any són activitats per col·laborar amb les colònies: el que s'hi recull ajuda a fer-les possibles.</p>
+      </div>
+    </section>
+
+    <!-- ===== SEGUEIX-NOS ===== -->
+    <section class="seccio">
+      <div class="contenidor">
+        <div class="segueix">
+          <div>
+            <h2>No et perdis cap avís</h2>
+            <p>Instagram és el canal més ràpid per saber quan s'obren les preinscripcions, recordatoris i novetats durant les colònies.</p>
+          </div>
+          <div class="segueix__canals">
+            <a class="canal" href="https://www.instagram.com/ktcolonies/" target="_blank" rel="noopener"><span class="canal__icona">📸</span><span>@ktcolonies<small>Instagram</small></span></a>
+            <a class="canal" href="mailto:catecolonies@gmail.com"><span class="canal__icona">✉️</span><span>catecolonies@gmail.com<small>Correu electrònic</small></span></a>
+            <a class="canal" href="https://www.radioarenysmunt.cat" target="_blank" rel="noopener"><span class="canal__icona">📻</span><span>Ràdio Arenys de Munt<small>107 FM · durant les colònies</small></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PEU DE PÀGINA (igual a totes les pàgines) ===== -->
+  <!-- Silueta de les serres del Corredor i Montalt -->
+  <svg class="serralada" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#1d5480" d="M0 90 L0 55 L120 30 L220 48 L340 12 L460 44 L560 26 L680 50 L800 18 L930 46 L1040 28 L1160 52 L1280 22 L1440 46 L1440 90 Z"/>
+    <path fill="#0b2740" d="M0 90 L0 70 L160 50 L300 66 L420 44 L560 68 L720 46 L860 70 L1000 52 L1140 72 L1300 50 L1440 66 L1440 90 Z"/>
+  </svg>
+  <footer class="peu">
+    <div class="contenidor">
+      <div class="peu__graella">
+        <div>
+          <a href="index.html" class="logo" aria-label="Catecolònies – Inici">
+            <img class="logo__img" src="img/logo-blanc.png" alt="Catecolònies Sant Martí d'Arenys de Munt">
+          </a>
+        </div>
+        <div>
+          <h4>La web</h4>
+          <ul>
+            <li><a href="qui-som.html">Qui som i d'on venim</a></li>
+            <li><a href="inscripcions.html">Inscripcions</a></li>
+            <li><a href="minikt.html">Mini-KT</a></li>
+            <li><a href="kt-fotos.html">KT Fotos</a></li>
+            <li><a href="noticies.html">Notícies</a></li>
+            <li><a href="faq.html">Preguntes freqüents</a></li>
+            <li><a href="documents.html">Documents</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacte</h4>
+          <ul>
+            <li><a href="mailto:catecolonies@gmail.com">catecolonies@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/ktcolonies/" target="_blank" rel="noopener">Instagram @ktcolonies</a></li>
+            <li><a href="https://catecolonies.blogspot.com/" target="_blank" rel="noopener">Blog antic</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Amb el suport de</h4>
+          <div class="suport">
+            <a class="suport__logo" href="https://www.arenysdemunt.cat" target="_blank" rel="noopener"><img src="img/logo-ajuntament-arenys.png" alt="Ajuntament d'Arenys de Munt"></a>
+            <span class="suport__logo"><img src="img/logo-fundacio-esplai-girona.png" alt="Fundació Esplai Girona – Mare de Déu del Mont"></span>
+          </div>
+        </div>
+      </div>
+      <div class="peu__final">
+        <span>© <span data-any-actual></span> C.E. Catecolònies Sant Martí</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
