@@ -12,6 +12,7 @@
   --taronja: #ff8c42;
   --blau: #00aeea;        /* blau cel clar */
   --lila: #7b6ce0;
+  --verd: #3fa673;        /* verd: targeta de voluntaris */
   --crema: #f7fafc;       /* fons general */
   --crema-2: #e5eef5;
   --text: #1d2420;
@@ -976,7 +977,7 @@ p { margin: 0 0 1em; }
 .equip:nth-child(2) { background: var(--blau); }
 .equip:nth-child(3) { background: var(--lila); }
 .equip:nth-child(4) { background: var(--mari); }
-.equip:nth-child(5) { background: var(--groc); color: var(--mari-fosc); }
+.equip:nth-child(5) { background: var(--verd); }
 @media (max-width: 980px) { .equips { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 600px) { .equips { grid-template-columns: 1fr 1fr; } .equip:last-child { grid-column: 1 / -1; } }
 
