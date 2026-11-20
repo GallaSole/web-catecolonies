@@ -90,3 +90,64 @@ document.querySelectorAll("[data-video-youtube], [data-video-drive]").forEach((c
     caixa.appendChild(iframe);
   });
 });
+
+// 7. Notícies: en clicar una targeta, s'obre en gran amb la imatge i el text complet
+const lector = document.querySelector(".lector");
+const noticies = document.querySelectorAll(".noticies .targeta");
+if (lector && noticies.length) {
+  const portada = lector.querySelector(".lector__portada");
+  const meta = lector.querySelector(".lector__meta");
+  const titol = lector.querySelector("#lector-titol");
+  const text = lector.querySelector(".lector__text");
+
+  function obreNoticia(targeta, actualitzaAdreca = true) {
+    const img = targeta.querySelector("img.targeta__imatge");
+    portada.innerHTML = "";
+    portada.className = "lector__portada";
+    if (img) {
+      const gran = document.createElement("img");
+      gran.src = targeta.dataset.imatgeGran || img.src;
+      gran.alt = img.alt;
+      portada.appendChild(gran);
+    } else {
+      portada.classList.add("lector__portada--color");
+      portada.style.background = targeta.dataset.color || "var(--mari)";
+      portada.textContent = targeta.dataset.emoji || "";
+    }
+    if (img) portada.style.background = "";
+
+    meta.innerHTML = "";
+    const xip = targeta.querySelector(".xip");
+    const data = targeta.querySelector(".targeta__data");
+    if (xip) meta.appendChild(xip.cloneNode(true));
+    if (data) meta.appendChild(data.cloneNode(true));
+
+    titol.textContent = targeta.querySelector("h3").textContent;
+    const complet = targeta.querySelector(".noticia-completa");
+    text.innerHTML = complet ? complet.innerHTML : targeta.querySelector(".targeta__cos p").outerHTML;
+
+    lector.showModal();
+    lector.scrollTop = 0;
+    document.body.classList.add("lector-obert");
+    if (actualitzaAdreca && targeta.id) history.replaceState(null, "", "#" + targeta.id);
+  }
+
+  noticies.forEach((targeta) => {
+    targeta.addEventListener("click", (e) => {
+      if (e.target.closest("a")) return; // els enllaços de la targeta funcionen com sempre
+      obreNoticia(targeta);
+    });
+  });
+
+  lector.querySelector(".lector__tanca").addEventListener("click", () => lector.close());
+  // Clicar fora de la finestra (al fons fosc) també la tanca
+  lector.addEventListener("click", (e) => { if (e.target === lector) lector.close(); });
+  lector.addEventListener("close", () => {
+    document.body.classList.remove("lector-obert");
+    history.replaceState(null, "", location.pathname + location.search);
+  });
+
+  // Si s'arriba amb un enllaç tipus noticies.html#kt-fotos (des de la portada), s'obre directament
+  const desdeAdreca = location.hash && document.getElementById(location.hash.slice(1));
+  if (desdeAdreca && desdeAdreca.matches(".noticies .targeta")) obreNoticia(desdeAdreca, false);
+}
