@@ -1,0 +1,18 @@
+/* Estils de l'editor de WordPress perquè el text s'assembli al de la web */
+body {
+  font-family: "DM Sans", system-ui, sans-serif;
+  color: #1d2420;
+  background: #fff;
+  font-size: 17px;
+  line-height: 1.7;
+}
+h1, h2, h3, h4, .editor-post-title {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  color: #12395a;
+  line-height: 1.15;
+}
+a { color: #0091d0; }
+.noticia__entradeta { font-size: 1.15em; font-weight: 500; color: #12395a; }
+.noticia__crit { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-weight: 800; color: #12395a; }
+.noticia__fitxa { list-style: none; padding: 0; }
+.boto { display: inline-block; padding: 10px 22px; border-radius: 999px; background: #0091d0; color: #fff; font-weight: 700; text-decoration: none; }

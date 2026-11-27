@@ -1,0 +1,18 @@
+/* =========================================================
+   Ajustos per a WordPress (la resta d'estils són a estil.css)
+   ========================================================= */
+
+/* La capçalera fixa no queda tapada per la barra d'administració */
+body.admin-bar .capcalera { top: 32px; }
+@media (max-width: 782px) { body.admin-bar .capcalera { top: 46px; } }
+
+/* Text de les pàgines noves i de la vista prèvia de les notícies */
+.contingut-lliure { max-width: 860px; }
+.contingut-lliure > * + * { margin-top: 1em; }
+.contingut-lliure img { max-width: 100%; height: auto; }
+.contingut-lliure ul, .contingut-lliure ol { padding-left: 1.2em; }
+
+/* Blocs de l'editor dins de les notícies */
+.lector__text .wp-block-image img, .noticia-completa .wp-block-image img { max-width: 100%; height: auto; border-radius: var(--radi-petit); }
+.lector__text figure { margin: 1em 0; }
+.lector__text .wp-block-embed iframe { max-width: 100%; }
