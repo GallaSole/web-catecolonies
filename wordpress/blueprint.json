@@ -1,0 +1,14 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/",
+  "preferredVersions": { "php": "8.3", "wp": "latest" },
+  "steps": [
+    { "step": "login" },
+    {
+      "step": "installTheme",
+      "themeData": { "resource": "url", "url": "https://raw.githubusercontent.com/GallaSole/web-catecolonies/wordpress/wordpress/catecolonies.zip" },
+      "options": { "activate": true }
+    },
+    { "step": "setSiteLanguage", "language": "ca" }
+  ]
+}
